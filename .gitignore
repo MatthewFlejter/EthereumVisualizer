@@ -1,2 +1,8 @@
 # Personal build script
 runitLogData.sh
+
+# Generated CSV files
+EthereumPrice.csv
+
+# Python cache
+__pycache__

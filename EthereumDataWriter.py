@@ -29,7 +29,7 @@ else:
 uri = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH&tsyms=BTC,USD,EUR&api_key=' + api_key
 
 # Path to csv file to log data; by default place this in the current working directory
-csv_path = os.getcwd() + 'EthereumPrice.csv'
+csv_path = os.getcwd() + '/EthereumPrice.csv'
 
 # Fetch data
 r = req.get(url=uri, params={})

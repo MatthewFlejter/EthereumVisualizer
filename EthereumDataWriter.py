@@ -8,7 +8,8 @@ import requests as req
 import argparse
 import os
 import sys
-from CsvWriter import CsvWriter
+from CsvProcessor import CsvProcessor
+from datetime import datetime
 
 # initiate the parser
 parser = argparse.ArgumentParser()
@@ -35,8 +36,10 @@ csv_path = os.getcwd() + '/EthereumPrice.csv'
 r = req.get(url=uri, params={})
 if (r.status_code != 200):
     print("Error retrieving data from CryptoCompare endpoint... Exiting...")
-data = r.json()
+data = r.json()['ETH']
+now = datetime.now()
+data['DateTime'] = now
 
 # Write pricing data to csv file
-writer = CsvWriter(csv_path)
-writer.write(data['ETH'])
+writer = CsvProcessor(csv_path)
+writer.write(data)

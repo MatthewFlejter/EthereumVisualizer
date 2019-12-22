@@ -22,6 +22,7 @@ for dat in data:
     x_data.append(dat['DateTime'])
     y_data.append(dat['USD'])
 
+# Create data frame
 df = pd.DataFrame({'Date': x_data, 'Price (USD)': y_data})
 
 # Setting up plot specs
